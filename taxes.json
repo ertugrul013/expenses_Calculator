@@ -1,0 +1,28 @@
+{
+    "__comment":"all of the taxes are yearly based taxes and need to be divided by 12 to get the monthly rate",
+    "Municipaltaxes":
+    [
+        {
+            "Noord-Brabant":
+            {
+                "waste_charges_single" : 173.16,
+                "waste_charges_multiple": 221.28,
+                "First_dog": 83.64,
+                "Second_dog": 125.64,
+                "Third_dog": 168.00,
+                "Dog_kennel": 251.88,
+                "Sewage_charges": 10
+            },
+            "Noord-Holland":
+            {
+                "waste_charges_single" : 173.16,
+                "waste_charges_multiple": 221.28,
+                "First_dog": 83.64,
+                "Second_dog": 125.64,
+                "Third_dog": 168.00,
+                "Dog_kennel": 251.88,
+                "Sewage_charges": 10
+            }
+        }
+    ]
+}
