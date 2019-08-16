@@ -1,0 +1,27 @@
+{
+  "name": "fixed_cost_api",
+  "version": "1.0.0",
+  "description": "API for getting Fixed cost of living in a a country",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ertugrul013/expenses_Calculator.git"
+  },
+  "keywords": [
+    "fixed_cost",
+    "expenses",
+    "calculator"
+  ],
+  "author": "eddie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ertugrul013/expenses_Calculator/issues"
+  },
+  "homepage": "https://github.com/ertugrul013/expenses_Calculator#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
