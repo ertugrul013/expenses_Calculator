@@ -10,22 +10,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.get('/ping', function (req, res, next) {
-    res.json({ message: "pong" });
-    console.log("API has been pinged");
-})
-
-app.get('/tik', (req, res, next) => {
-    console.log("tik has been recieved");
     res.json({
-        name: "eddie",
-        age: "19",
-        status: "alive"
+        message: "pong",
+        status: "200"
     });
-    console.log("tok has been sent");
-})
+    console.log("API has been pinged");
+});
 
-app.get("/api/users", (req, res, next) => {
-    var sql = "select * from user"
+app.get("/api/cities", (req, res, next) => {
+    var sql = "select * from cities"
     var params = []
     db.all(sql, params, (err, rows) => {
         if (err) {
@@ -35,10 +28,11 @@ app.get("/api/users", (req, res, next) => {
         res.json({
             "message": "success",
             "data": rows
-        })
+        });
     });
 });
 
+//GET user with ID handels SQL injection
 app.get("/api/user/:id", (req, res, next) => {
     var sql = "select * from user where id = ?"
     var params = [req.params.id]
@@ -50,10 +44,11 @@ app.get("/api/user/:id", (req, res, next) => {
         res.json({
             "message": "success",
             "data": row
-        })
+        });
     });
 });
 
+// POST new user to DB
 app.post("/api/user/", (req, res, next) => {
     var errors = [];
 
