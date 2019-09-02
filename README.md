@@ -15,14 +15,13 @@
 ## Install
 
 ```sh
-npm install
+pip3 install -r requirments.txt && cd API && npm install
 ```
 
 ## Usage
 
-```sh
-cd to the API directory to run the API on your local server. It will create a local database and will populate it for now with useless data. 
-```
+> cd to the API directory to run the API on your local server, with npm start. It will create a local database and will populate it for now with useless data. 
+
 
 ## Run tests
 
