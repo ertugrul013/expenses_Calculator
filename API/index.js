@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 
-var db = require("./database.js");
+var db = require("./database/index.js");
 
 var port = process.env.PORT || 8080;
 

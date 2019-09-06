@@ -1,1 +1,0 @@
-var mySql = require('mysql');
