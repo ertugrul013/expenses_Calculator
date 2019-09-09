@@ -1,5 +1,7 @@
 var router = require("express").Router();
 
+var database = require("../database/index.js");
+
 router.use(function DateLog(req, res, next) {
     console.log('Date: ' + Date.now());
 
@@ -51,12 +53,11 @@ router.post('/api/city', function (req, res, next) {
     }
 
     var dataField = {
-        cityName = req.body.cityname,
-        cityCost = req.body.citycost,
-        livability = req.body.livability
+        cityName: req.body.cityname,
+        cityCost: req.body.citycost,
+        livability: req.body.livability
     };
 
     var insert = 'INSERT INTO cities (cityname , citycost, livability) VALUES(?,?,?)';
-
     //code for inserting contents to db
 });
