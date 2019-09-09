@@ -1,28 +1,23 @@
-var mySql = require('mysql');
+var mysql = require('mysql');
 var fs = require('fs');
 
 const configFiledir = __dirname + "/config.json";
 
-const configData = fs.readFile(configFiledir, (err, data) => {
-    if (err) {
-        console.log("error has been encouterd while open config file");
-        throw err;
-    }
-    return JSON.parse(data);
-});
+var config = JSON.parse(fs.readFileSync(configFiledir, 'utf8'));
 
-var connection = mySql.createConnection({
-    host: configData.dbAddres,
-    user: configData.userName,
-    password: configData.password,
-    port: configData.dbPort
+var connection = mysql.createConnection({
+    host: config.dbAddres,
+    user: config.userName,
+    password: config.password,
+    port: config.dbPort,
+    database: config.database
 });
 
 connection.connect(function (err) {
     if (err) {
-        console.log("Connection failed" + err.stack);
+        console.log("Connection failed " + err.stack);
         return;
     }
-    console.log("Connection Succesful");
+    console.log("Connection Succesful " + connection.threadId);
 });
 
