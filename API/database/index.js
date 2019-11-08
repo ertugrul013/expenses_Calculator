@@ -21,3 +21,4 @@ connection.connect(function (err) {
     console.log("Connection Succesful " + connection.threadId);
 });
 
+module.exports = connection;

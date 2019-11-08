@@ -61,3 +61,5 @@ router.post('/api/city', function (req, res, next) {
     var insert = 'INSERT INTO cities (cityname , citycost, livability) VALUES(?,?,?)';
     //code for inserting contents to db
 });
+
+module.exports = router;
