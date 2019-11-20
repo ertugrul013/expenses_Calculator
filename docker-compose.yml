@@ -1,0 +1,29 @@
+version: "3"
+services:
+  API:
+    image: node:10
+    user: node
+    working_dir: /home/node/app
+    volumes:
+      - ./API:/home/node/app
+    expose:
+      - 8081
+    ports:
+      - 8081:8081
+    command: npm start
+  
+  Frontend:
+    image: node:10
+    depends_on: 
+      - API
+    user: node
+    working_dir: /home/node/app
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./frontend:/home/node/app
+    expose:
+      - 3000
+    ports:
+      - 3000:3000
+    command: npm start
