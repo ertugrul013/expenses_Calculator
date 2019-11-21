@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "babel-node --presets es2015 src/index.js",
+    "dev": "nodemon --exec babel-node src/index.js",
     "build": "babel --presets es2015 src/ -d ./lib"
   },
   "repository": {

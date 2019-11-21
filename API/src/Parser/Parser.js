@@ -1,9 +1,13 @@
-var parser = async function (_city, _currency) {
-    //const city = req.params.city[0].toUpperCase() + req.params.city.slice(1).toLowerCase();
-    city = _city[0].toUpperCase() + _city.slice(1).toLowerCase();
+const fetch = require('node-fetch');
+const cheerio = require('cheerio');
+import express from "express";
+
+var parser = async function (_city, _currency, res) {
+    console.log(_city);
+    var city = _city[0].toUpperCase() + _city.slice(1).toLowerCase();
     const { currency = 'EUR' } = _currency.toUpperCase();
 
-    const response = await fetch(`https://www.numbeo.com/cost-of-living/in/${cityTemp}?displayCurrency=${currency}`);
+    const response = await fetch(`https://www.numbeo.com/cost-of-living/in/${city}?displayCurrency=${currency}`);
     if (!response.ok) {
         return res.status(response.status).send(response.statusText);
     }

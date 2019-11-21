@@ -1,22 +1,29 @@
+import parser from "../Parser/Parser";
+
+import test from "../Parser/test";
+
 var appRouter = function (app) {
     app.get("/ping", (req, res) => {
         res.statusCode = 200;
         res.json({ "status": "200" });
     });
 
-    app.get("/api/:city/:currency/min", (req, res) => {
-        res.statusCode = 501;
-        res.json({ "message": "sending minified version", "status": "501" });
-    });
+    app.get("/api/cost", async (req, res) => {
 
-    app.get("/api/:city/:currency/full", (req, res) => {
-        res.statusCode = 501;
-        res.json({ "message": "sending full version", "status": "501" });
-    });
+        const city = req.query.city;
+        const currency = req.query.currency;
+        const type = req.query.type;
 
-    app.get("/api/:city/:currency/average", (req, res) => {
-        res.statusCode = 501;
-        res.json({ "message": "sending average cost", "status": "501" });
+
+        parser(city, currency, res);
+
+        // console.log(city, currency, type);
+
+        // res.json({
+        //     "city": city,
+        //     "currency": currency,
+        //     "type": type
+        // });
     });
 }
 
