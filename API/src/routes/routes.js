@@ -1,7 +1,5 @@
 import parser from "../Parser/Parser";
 
-import test from "../Parser/test";
-
 var appRouter = function (app) {
     app.get("/ping", (req, res) => {
         res.statusCode = 200;
