@@ -7,23 +7,23 @@ networks:
 
 services:
 
-  Server:
-    image: nginx:latest
-    depends_on:
-      - API
-      - Frontend
-    restart: always
-    ports:
-      - 8082:80
-    expose:
-      - "80"
-    volumes:
-      - ./frontend/build:/usr/share/nginx/html
-    environment:
-      VIRTUAL_HOST: test.com,www.test.com
-    networks: 
-      - default
-      - API
+  # Server:
+  #   image: nginx:latest
+  #   depends_on:
+  #     - API
+  #     - Frontend
+  #   restart: always
+  #   ports:
+  #     - 8082:80
+  #   expose:
+  #     - "80"
+  #   volumes:
+  #     - ./frontend/build:/usr/share/nginx/html
+  #   environment:
+  #     VIRTUAL_HOST: test.com,www.test.com
+  #   networks: 
+  #     - default
+  #     - API
 
   API:
     image: node:10
@@ -51,4 +51,4 @@ services:
       - 3000
     ports:
       - 3000:3000
-    command: npm run-script build
+    command: npm run-script server
