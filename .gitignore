@@ -216,3 +216,5 @@ typings/
 # Database config file
 config.json
 *.mwb
+
+frontend/node_modules
