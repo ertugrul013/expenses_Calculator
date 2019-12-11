@@ -39,9 +39,7 @@ const LandingPage = () => {
         <div className="bx--col bx--no-gutter">
           <Tabs {...props.tabs} aria-label="Tab navigation">
             <Tab {...props.tab} label="About">
-              <div>
                   <h1>About</h1>
-                </div>
               </Tab>
             <Tab{...props.tab} label="Possibillitys">
               <div>
